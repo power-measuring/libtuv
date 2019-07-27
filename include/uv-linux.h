@@ -21,11 +21,12 @@
 
 #ifndef UV_LINUX_H
 #define UV_LINUX_H
+#include <poll.h>
 
+#define TUV_POLL_EVENTS_SIZE  32
 #define UV_PLATFORM_LOOP_FIELDS                                               \
-  uv__io_t inotify_read_watcher;                                              \
-  void* inotify_watchers;                                                     \
-  int inotify_fd;                                                             \
+  struct pollfd pollfds[TUV_POLL_EVENTS_SIZE];                                \
+  int npollfds;                                                               \
 
 #define UV_PLATFORM_FS_EVENT_FIELDS                                           \
   void* watchers[2];                                                          \

@@ -179,13 +179,15 @@ struct uv__stream_queued_fds_s {
     defined(__FreeBSD__) || \
     defined(__FreeBSD_kernel__) || \
     defined(__linux__)
-#define uv__cloexec uv__cloexec_ioctl
-#define uv__nonblock uv__nonblock_ioctl
+
+//#define uv__cloexec uv__cloexec_ioctl
+//#define uv__nonblock uv__nonblock_ioctl
 #else
 #define uv__cloexec uv__cloexec_fcntl
 #define uv__nonblock uv__nonblock_fcntl
 #endif
-
+#define uv__cloexec uv__cloexec_fcntl
+#define uv__nonblock uv__nonblock_fcntl
 /* core */
 int uv__cloexec_ioctl(int fd, int set);
 int uv__cloexec_fcntl(int fd, int set);

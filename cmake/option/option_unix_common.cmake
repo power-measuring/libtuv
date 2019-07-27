@@ -18,7 +18,7 @@ set(FLAGS_COMMON
       )
 
 set(CMAKE_C_FLAGS_DEBUG     "-O0 -g -DDEBUG")
-set(CMAKE_C_FLAGS_RELEASE   "-O2 -DNDEBUG")
+set(CMAKE_C_FLAGS_RELEASE   "-O2 -NDEBUG")
 
 # unix common source files
 set(UNIX_PATH "${SOURCE_ROOT}/unix")

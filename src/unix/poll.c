@@ -71,9 +71,9 @@ int uv_poll_init(uv_loop_t* loop, uv_poll_t* handle, int fd) {
   int err;
 
 #if !defined(__NUTTX__) && !defined(__TIZENRT__)
-  err = uv__io_check_fd(loop, fd);
+  //err = uv__io_check_fd(loop, fd);
   if (err)
-    return err;
+    return 0;
 #endif
 
   /* If ioctl(FIONBIO) reports ENOTTY, try fcntl(F_GETFL) + fcntl(F_SETFL).
