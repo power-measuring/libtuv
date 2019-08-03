@@ -154,7 +154,7 @@ void uv__io_poll(uv_loop_t* loop, int timeout) {
 
   assert(timeout >= -1);
   base = loop->time;
-  count = 5;
+  count = 1;
   
   for (;;) {
 //      for(int i = 0; i < loop->npollfds; i++) {
